@@ -97,3 +97,5 @@ weight = 1
 - Always add `node_modules/` and `dist/` to `.gitignore`.
 - Use clear and descriptive folder names.
 - Group related files together for easier navigation.
+
+
