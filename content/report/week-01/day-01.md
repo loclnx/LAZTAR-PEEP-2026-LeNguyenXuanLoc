@@ -15,7 +15,7 @@ weight = 1
 
 #### 3. `git clone`
 
-_No image was provided for this command._
+![git fetch](/images/report/day-01/git_clone.png)
 
 #### 4. `git fetch`
 
@@ -23,7 +23,7 @@ _No image was provided for this command._
 
 #### 5. `git pull`
 
-_No image was provided for this command._
+![git fetch](/images/report/day-01/git_pull.png)
 
 #### 6. `git status`
 
