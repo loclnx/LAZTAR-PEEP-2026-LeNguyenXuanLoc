@@ -5,6 +5,21 @@ weight = 1
 
 ### Report DAY 1
 
+### NOTE:
+
+Working with Git:
+
+- Creating a repository with `git init` and connecting it to a remote with `git remote`.
+- Copying an existing repository with `git clone`, and synchronizing changes with `git fetch` and `git pull`.
+- Checking the working tree with `git status` and managing branches with `git branch`, `git switch`, and `git checkout`.
+- Preparing changes with `git add`, saving them with `git commit`, and correcting the latest commit with `git commit --amend`.
+- Uploading changes with `git push` and undoing or reorganizing commits with `git reset` and `git rebase`.
+- Using interactive rebase with `git rebase -i` to review and clean up commit history.
+- Temporarily saving unfinished work with `git stash` and restoring it with `git stash pop`.
+- Combining work from different branches with `git merge` and applying a specific commit with `git cherry-pick`.
+
+### PRATICE
+
 #### 1. `git init`
 
 ![git init](/images/report/day-01/git_init_remote_branch_add.png)
