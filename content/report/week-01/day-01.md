@@ -67,15 +67,15 @@ _No image was provided for this command._
 
 #### 16. `git rebase -i`
 
-_No image was provided for this command._
+![git rebase](/images/report/day-01/github_rebase-i.png)
 
 #### 17. `git stash`
 
-_No image was provided for this command._
+![git rebase](/images/report/day-01/git_stash_stashpop.png)
 
 #### 18. `git stash pop`
 
-_No image was provided for this command._
+![git rebase](/images/report/day-01/git_stash_stashpop.png)
 
 #### 19. `git merge`
 
