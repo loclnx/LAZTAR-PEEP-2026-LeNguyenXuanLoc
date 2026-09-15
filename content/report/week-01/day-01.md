@@ -3,7 +3,7 @@ title = "Day 01 - Git Report"
 weight = 1
 +++
 
-### Report
+### Report DAY 1
 
 #### 1. `git init`
 
