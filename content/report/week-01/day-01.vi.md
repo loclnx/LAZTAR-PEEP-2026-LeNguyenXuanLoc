@@ -20,6 +20,10 @@ Những lệnh hoạt động với Git:
 
 LƯU Ý: LUÔN PHẢI FETCH VÀ PULL CODE VỀ ĐỂ TRÁNH CONFLICT, VÀ CHECK BRANCH HIỆN TẠI
 
+CÁCH GIẢI QUYẾT CONFLICT THƯỜNG GẶP:
+1. ĐỐI VỚI CHƯA COMMIT: Dùng 'git stash' để cất tạm những thay đổi bạn chưa commit ra khỏi working directory, để thư mục code trở về trạng thái sạch. Sau đó pull code mới về, dùng 'git stash pop' để lấy lại những file đã cất tạm, rồi git add git commit push lên bình thường.
+2. ĐỐI VỚI VIỆC ĐÃ COMMIT: Dùng 'git pull --rebase' để đưa commit lên remote mới nhất, sau đó sửa conflict thủ công sau đó 'git add .' và 'git rebase --continue'
+
 ### Thực hành
 
 #### 1. `git init`
