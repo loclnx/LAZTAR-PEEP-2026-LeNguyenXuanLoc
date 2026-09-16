@@ -44,12 +44,12 @@ function Welcome({ name }) {
 
 State là dữ liệu nội bộ của component. Khi state thay đổi, React sẽ yêu cầu component render lại để cập nhật giao diện.
 
-| Đặc điểm | Props | State |
-| --- | --- | --- |
-| Nguồn dữ liệu | Từ component cha | Do component tự quản lý |
-| Có thể thay đổi trực tiếp không? | Không | Không nên thay đổi trực tiếp, phải dùng hàm cập nhật |
-| Phạm vi | Truyền giữa các component | Thường thuộc về một component |
-| Mục đích | Cấu hình hoặc truyền dữ liệu | Lưu trạng thái thay đổi của giao diện |
+| Đặc điểm                            | Props                              | State                                                           |
+| --------------------------------------- | ---------------------------------- | --------------------------------------------------------------- |
+| Nguồn dữ liệu                        | Từ component cha                  | Do component tự quản lý                                      |
+| Có thể thay đổi trực tiếp không? | Không                             | Không nên thay đổi trực tiếp, phải dùng hàm cập nhật |
+| Phạm vi                                | Truyền giữa các component       | Thường thuộc về một component                              |
+| Mục đích                             | Cấu hình hoặc truyền dữ liệu | Lưu trạng thái thay đổi của giao diện                    |
 
 ### 6. Virtual DOM là gì? Vì sao React sử dụng Virtual DOM?
 
@@ -354,4 +354,4 @@ Khi deploy cần kiểm tra biến môi trường, lệnh build, cấu hình ima
 
 ## Portfolio
 
-[Xem portfolio cá nhân](https://portfolio-loclnx.vercel.app/)
+[Xem portfolio cá nhân](https://loclnxportfolio.vercel.app/)
