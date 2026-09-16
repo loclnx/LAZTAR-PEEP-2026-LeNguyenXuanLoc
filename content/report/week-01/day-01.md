@@ -18,6 +18,15 @@ Working with Git:
 - Temporarily saving unfinished work with `git stash` and restoring it with `git stash pop`.
 - Combining work from different branches with `git merge` and applying a specific commit with `git cherry-pick`.
 
+### IMPORTANT NOTE:
+
+Always fetch and pull the latest code to avoid conflicts, and check the current branch before making changes.
+
+### COMMON CONFLICT RESOLUTION:
+
+1. For uncommitted changes: Use `git stash` to temporarily store changes that have not been committed and restore the working directory to a clean state. Then pull the latest code, use `git stash pop` to restore the saved files, and run `git add`, `git commit`, and `git push` as usual.
+2. For changes that have already been committed: Use `git pull --rebase` to apply your commits on top of the latest remote changes. Then resolve conflicts manually, run `git add .`, and continue with `git rebase --continue`.
+
 ### PRATICE
 
 #### 1. `git init`
