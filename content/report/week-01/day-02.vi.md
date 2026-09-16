@@ -355,3 +355,5 @@ Khi deploy cần kiểm tra biến môi trường, lệnh build, cấu hình ima
 ## Landing Page
 
 [Xem portfolio cá nhân](https://loclnxportfolio.vercel.app/)
+
+Link repo: [github.com/loclnx/Portfolio](https://github.com/loclnx/Portfolio)

@@ -44,12 +44,12 @@ function Welcome({ name }) {
 
 State is data managed internally by a component. When state changes, React asks the component to render again and update the interface.
 
-| Characteristic | Props | State |
-| --- | --- | --- |
-| Data source | From the parent component | Managed by the component itself |
-| Can it be changed directly? | No | No, an update function should be used |
-| Scope | Passed between components | Usually belongs to one component |
-| Purpose | Configuration or data transfer | Stores changing UI data |
+| Characteristic              | Props                          | State                                 |
+| --------------------------- | ------------------------------ | ------------------------------------- |
+| Data source                 | From the parent component      | Managed by the component itself       |
+| Can it be changed directly? | No                             | No, an update function should be used |
+| Scope                       | Passed between components      | Usually belongs to one component      |
+| Purpose                     | Configuration or data transfer | Stores changing UI data               |
 
 ### 6. What is the Virtual DOM? Why does React use it?
 
@@ -355,3 +355,5 @@ Before deployment, check environment variables, the build command, remote-image 
 ## Landing Page
 
 [View personal portfolio](https://loclnxportfolio.vercel.app/)
+
+Link repo: [github.com/loclnx/Portfolio](https://github.com/loclnx/Portfolio)
