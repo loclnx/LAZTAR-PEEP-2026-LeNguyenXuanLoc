@@ -1,77 +1,77 @@
 +++
-title = "Day 02 - React và Next.js"
+title = "Day 02 - React and Next.js"
 weight = 2
 +++
 
-### Báo cáo Ngày 02
+### Day 02 Report
 
-## A. Lý thuyết
+## A. Theory
 
-## Phần 1. React cơ bản
+## Part 1. React Fundamentals
 
-### 1. React là gì?
+### 1. What is React?
 
-React là thư viện JavaScript mã nguồn mở do Meta phát triển để xây dựng giao diện người dùng, đặc biệt là các ứng dụng web có tính tương tác cao. React tổ chức giao diện thành các component có thể tái sử dụng và cập nhật giao diện dựa trên sự thay đổi của dữ liệu.
+React is an open-source JavaScript library developed by Meta for building user interfaces, especially highly interactive web applications. React organizes the interface into reusable components and updates the UI when data changes.
 
-### 2. Component trong React là gì? Có mấy loại component?
+### 2. What is a React component? How many types of components are there?
 
-Component là một phần độc lập của giao diện, có thể nhận dữ liệu đầu vào và trả về giao diện cần hiển thị. Component giúp chia ứng dụng thành những phần nhỏ, dễ phát triển và bảo trì.
+A component is an independent part of the interface that can receive input data and return the UI that should be displayed. Components divide an application into smaller parts that are easier to develop and maintain.
 
-React thường có hai dạng component:
+React commonly has two types of components:
 
-- **Function Component:** Được viết bằng hàm JavaScript hoặc TypeScript. Đây là cách được sử dụng phổ biến hiện nay và có thể dùng Hooks.
-- **Class Component:** Được viết bằng class, sử dụng các phương thức vòng đời. Cách này chủ yếu xuất hiện trong các dự án React cũ.
+- **Function Component:** Written as a JavaScript or TypeScript function. This is the most common approach today and supports Hooks.
+- **Class Component:** Written as a class and uses lifecycle methods. This approach is mainly found in older React projects.
 
-### 3. JSX là gì?
+### 3. What is JSX?
 
-JSX là cú pháp mở rộng cho JavaScript, cho phép viết cấu trúc tương tự HTML bên trong mã JavaScript. JSX được biên dịch thành các lời gọi `React.createElement` hoặc cơ chế tương đương trước khi chạy trên trình duyệt.
+JSX is a syntax extension for JavaScript that allows developers to write HTML-like structures inside JavaScript code. JSX is compiled into calls to `React.createElement` or an equivalent mechanism before running in the browser.
 
 ```jsx
 const greeting = <h1>Hello React</h1>;
 ```
 
-### 4. Props là gì?
+### 4. What are Props?
 
-Props là dữ liệu được truyền từ component cha xuống component con. Props có tính chỉ đọc, vì component con không nên trực tiếp thay đổi dữ liệu nhận được từ component cha.
+Props are data passed from a parent component to a child component. Props are read-only because a child component should not directly change the data received from its parent.
 
 ```jsx
 function Welcome({ name }) {
-  return <h1>Xin chào {name}</h1>;
+  return <h1>Hello {name}</h1>;
 }
 ```
 
-### 5. State là gì? State khác Props như thế nào?
+### 5. What is State? How is State different from Props?
 
-State là dữ liệu nội bộ của component. Khi state thay đổi, React sẽ yêu cầu component render lại để cập nhật giao diện.
+State is data managed internally by a component. When state changes, React asks the component to render again and update the interface.
 
-| Đặc điểm                            | Props                              | State                                                           |
-| --------------------------------------- | ---------------------------------- | --------------------------------------------------------------- |
-| Nguồn dữ liệu                        | Từ component cha                  | Do component tự quản lý                                      |
-| Có thể thay đổi trực tiếp không? | Không                             | Không nên thay đổi trực tiếp, phải dùng hàm cập nhật |
-| Phạm vi                                | Truyền giữa các component       | Thường thuộc về một component                              |
-| Mục đích                             | Cấu hình hoặc truyền dữ liệu | Lưu trạng thái thay đổi của giao diện                    |
+| Characteristic | Props | State |
+| --- | --- | --- |
+| Data source | From the parent component | Managed by the component itself |
+| Can it be changed directly? | No | No, an update function should be used |
+| Scope | Passed between components | Usually belongs to one component |
+| Purpose | Configuration or data transfer | Stores changing UI data |
 
-### 6. Virtual DOM là gì? Vì sao React sử dụng Virtual DOM?
+### 6. What is the Virtual DOM? Why does React use it?
 
-Virtual DOM là biểu diễn của DOM thật dưới dạng cấu trúc dữ liệu trong bộ nhớ. Khi dữ liệu thay đổi, React tạo Virtual DOM mới, so sánh với phiên bản trước rồi chỉ cập nhật những phần cần thay đổi trên DOM thật.
+The Virtual DOM is an in-memory representation of the real DOM. When data changes, React creates a new Virtual DOM, compares it with the previous version, and updates only the necessary parts of the real DOM.
 
-Cách này giúp giảm số lần thao tác DOM trực tiếp, từ đó làm cho quá trình cập nhật giao diện hiệu quả và dễ kiểm soát hơn.
+This reduces the number of direct DOM operations and makes UI updates more efficient and easier to control.
 
-### 7. Hooks là gì? Kể tên một số Hook phổ biến trong React.
+### 7. What are Hooks? Name some common React Hooks.
 
-Hooks là các hàm đặc biệt cho phép Function Component sử dụng state, lifecycle và những tính năng khác của React. Một số Hook phổ biến:
+Hooks are special functions that allow Function Components to use state, lifecycle behavior, and other React features. Common Hooks include:
 
-- `useState`: Quản lý state.
-- `useEffect`: Thực hiện side effect.
-- `useContext`: Đọc dữ liệu từ Context.
-- `useReducer`: Quản lý state có logic phức tạp.
-- `useRef`: Lưu giá trị giữa các lần render hoặc tham chiếu đến phần tử DOM.
-- `useMemo`: Ghi nhớ kết quả tính toán.
-- `useCallback`: Ghi nhớ một hàm callback.
+- `useState`: Manages state.
+- `useEffect`: Performs side effects.
+- `useContext`: Reads data from Context.
+- `useReducer`: Manages state with complex logic.
+- `useRef`: Stores a value between renders or references a DOM element.
+- `useMemo`: Memoizes a computed result.
+- `useCallback`: Memoizes a callback function.
 
-### 8. `useState` dùng để làm gì?
+### 8. What is `useState` used for?
 
-`useState` dùng để khai báo và cập nhật state trong Function Component.
+`useState` declares and updates state in a Function Component.
 
 ```jsx
 const [count, setCount] = useState(0);
@@ -81,11 +81,11 @@ function increase() {
 }
 ```
 
-Khi gọi `setCount`, React sẽ render lại component với giá trị mới.
+When `setCount` is called, React renders the component again with the new value.
 
-### 9. `useEffect` dùng để làm gì?
+### 9. What is `useEffect` used for?
 
-`useEffect` dùng để xử lý các side effect, tức là những công việc liên quan đến bên ngoài quá trình render như gọi API, đăng ký sự kiện, cập nhật tiêu đề trang hoặc dùng timer.
+`useEffect` handles side effects, which are tasks outside the render process such as calling an API, registering an event, updating the page title, or using a timer.
 
 ```jsx
 useEffect(() => {
@@ -93,183 +93,183 @@ useEffect(() => {
 }, [count]);
 ```
 
-Mảng dependency quyết định khi nào effect được chạy lại. Effect cũng có thể trả về một hàm cleanup để hủy timer hoặc sự kiện.
+The dependency array determines when the effect runs again. An effect can also return a cleanup function to remove a timer or event listener.
 
-### 10. Lifecycle của một React Component gồm những giai đoạn nào?
+### 10. What are the lifecycle stages of a React component?
 
-Lifecycle của component gồm ba giai đoạn chính:
+A component lifecycle has three main stages:
 
-1. **Mounting:** Component được tạo và đưa vào DOM.
-2. **Updating:** Component được cập nhật khi props hoặc state thay đổi.
-3. **Unmounting:** Component bị gỡ khỏi DOM.
+1. **Mounting:** The component is created and added to the DOM.
+2. **Updating:** The component is updated when its props or state change.
+3. **Unmounting:** The component is removed from the DOM.
 
-Với Function Component, `useEffect` thường được dùng để xử lý công việc sau khi render và cleanup khi component bị unmount.
+For Function Components, `useEffect` is commonly used to handle work after rendering and cleanup when the component is unmounted.
 
-### 11. Client-Side Rendering (CSR) là gì?
+### 11. What is Client-Side Rendering (CSR)?
 
-CSR là cách render trong đó server gửi HTML cơ bản và JavaScript xuống trình duyệt. Trình duyệt tải JavaScript, chạy ứng dụng và tạo phần lớn giao diện ở phía client.
+CSR is a rendering approach in which the server sends basic HTML and JavaScript to the browser. The browser loads the JavaScript, runs the application, and creates most of the interface on the client side.
 
-CSR phù hợp với các ứng dụng tương tác nhiều sau khi ứng dụng đã tải xong, nhưng lần tải đầu tiên có thể chậm và SEO cần được xử lý bổ sung.
+CSR is suitable for highly interactive applications after they have loaded, but the initial load may be slower and SEO may require additional solutions.
 
-### 12. React Router là gì?
+### 12. What is React Router?
 
-React Router là thư viện định tuyến thường dùng trong ứng dụng React. Nó cho phép ánh xạ URL đến component, tạo route lồng nhau, route động, điều hướng bằng code và bảo vệ route.
+React Router is a routing library commonly used in React applications. It maps URLs to components and supports nested routes, dynamic routes, programmatic navigation, and protected routes.
 
-Ví dụ, URL `/products/10` có thể được ánh xạ đến component hiển thị sản phẩm có mã `10`.
+For example, the URL `/products/10` can be mapped to a component that displays the product with ID `10`.
 
-### 13. React thuần có hỗ trợ Routing, SEO và API Server không?
+### 13. Does plain React provide Routing, SEO, and an API Server?
 
-React thuần không tích hợp sẵn Routing, SEO server-side hoặc API Server:
+Plain React does not include Routing, server-side SEO, or an API Server by default:
 
-- **Routing:** Có thể dùng thư viện như React Router.
-- **SEO:** Có thể dùng thư viện hỗ trợ metadata hoặc triển khai SSR bằng công cụ khác, nhưng React thuần chủ yếu là CSR.
-- **API Server:** Cần gọi API từ backend riêng hoặc dùng một dịch vụ backend khác.
+- **Routing:** A library such as React Router can be used.
+- **SEO:** Metadata libraries or another SSR solution can be added, but plain React mainly uses CSR.
+- **API Server:** The application must call a separate backend API or another backend service.
 
-Vì vậy, React thuần là thư viện giao diện, không phải một full-stack framework.
+Therefore, plain React is a UI library, not a full-stack framework.
 
-### 14. Context API là gì? Khi nào nên sử dụng?
+### 14. What is the Context API? When should it be used?
 
-Context API là cơ chế chia sẻ dữ liệu giữa nhiều component mà không cần truyền props qua từng component trung gian.
+The Context API shares data between multiple components without passing props through every intermediate component.
 
-Context phù hợp với dữ liệu dùng ở nhiều nơi như theme, ngôn ngữ, thông tin người dùng đăng nhập hoặc quyền truy cập. Không nên dùng Context cho mọi state vì khi Context thay đổi, nhiều component sử dụng Context có thể render lại.
+Context is useful for data used in many places, such as themes, languages, logged-in user information, or access permissions. It should not be used for every piece of state because changing a Context can cause many consuming components to render again.
 
-### 15. SPA (Single Page Application) là gì?
+### 15. What is an SPA (Single Page Application)?
 
-SPA là ứng dụng web chỉ tải một trang HTML ban đầu. Sau đó JavaScript thay đổi nội dung trên trang và điều hướng giữa các màn hình mà không cần tải lại toàn bộ trang.
+An SPA initially loads one HTML page. JavaScript then changes the page content and navigates between screens without reloading the entire page.
 
-SPA cho trải nghiệm chuyển trang nhanh và mượt, nhưng cần chú ý thời gian tải JavaScript ban đầu, SEO và việc quản lý trạng thái trình duyệt.
+An SPA provides fast and smooth navigation, but developers must consider the initial JavaScript load time, SEO, and browser state management.
 
-## Phần 2. So sánh React và Next.js
+## Part 2. Comparing React and Next.js
 
-### 16. Next.js là gì?
+### 16. What is Next.js?
 
-Next.js là framework xây dựng ứng dụng web dựa trên React, được phát triển bởi Vercel. Next.js cung cấp sẵn routing, nhiều chiến lược rendering, tối ưu hình ảnh, metadata, API/Route Handlers và các tính năng hỗ trợ deploy.
+Next.js is a framework for building web applications with React, developed by Vercel. It provides routing, multiple rendering strategies, image optimization, metadata, API/Route Handlers, and deployment support.
 
-### 17. Điểm khác biệt cốt lõi giữa React và Next.js là gì?
+### 17. What is the core difference between React and Next.js?
 
-React là thư viện tập trung vào xây dựng UI. Next.js là framework sử dụng React và cung cấp thêm kiến trúc, quy ước thư mục, routing, server rendering, tối ưu hiệu năng và các tính năng full-stack.
+React is a library focused on building user interfaces. Next.js is a framework built on React that also provides architecture, folder conventions, routing, server rendering, performance optimization, and full-stack features.
 
-Nói cách khác, React cung cấp nền tảng component, còn Next.js cung cấp một bộ khung hoàn chỉnh để xây dựng ứng dụng web.
+In other words, React provides the component foundation, while Next.js provides a complete structure for building web applications.
 
-### 18. Routing trong React và Next.js khác nhau như thế nào?
+### 18. How is routing different in React and Next.js?
 
-Trong React, routing thường phải cài và cấu hình thư viện như React Router, sau đó tự khai báo các route.
+In React, developers usually install and configure a library such as React Router and then define routes manually.
 
-Trong Next.js, routing dựa trên cấu trúc file và thư mục. Tùy router được sử dụng, file `app/page.tsx` hoặc `pages/index.tsx` sẽ đại diện cho route `/`. Nhiều trường hợp không cần khai báo route thủ công.
+In Next.js, routing is based on the file and folder structure. Depending on the router, `app/page.tsx` or `pages/index.tsx` represents the `/` route. In many cases, routes do not need to be declared manually.
 
-### 19. Rendering trong React và Next.js khác nhau ra sao?
+### 19. How does rendering differ between React and Next.js?
 
-React thuần thường sử dụng CSR: giao diện được tạo chủ yếu trong trình duyệt.
+Plain React commonly uses CSR, where the interface is mainly created in the browser.
 
-Next.js hỗ trợ nhiều cách rendering:
+Next.js supports multiple rendering methods:
 
 - CSR.
-- SSR: render HTML trên server cho mỗi request.
-- SSG: tạo HTML tĩnh trong quá trình build.
-- ISR: cập nhật lại trang tĩnh theo chu kỳ hoặc khi được yêu cầu.
+- SSR: Generates HTML on the server for each request.
+- SSG: Generates static HTML during the build.
+- ISR: Updates static pages periodically or when requested.
 
-### 20. Vì sao Next.js hỗ trợ SEO tốt hơn React thuần?
+### 20. Why does Next.js provide better SEO support than plain React?
 
-Với React thuần dùng CSR, HTML ban đầu thường chưa chứa đầy đủ nội dung, nên crawler phải thực thi JavaScript để đọc trang. Next.js có thể tạo HTML chứa nội dung ngay từ server hoặc lúc build.
+With plain React and CSR, the initial HTML often does not contain all page content, so a crawler must execute JavaScript to read the page. Next.js can generate HTML containing the content on the server or during the build.
 
-Next.js cũng hỗ trợ quản lý title, description, Open Graph và các metadata khác. Vì vậy crawler có thể đọc nội dung và metadata sớm hơn, giúp việc lập chỉ mục và chia sẻ liên kết tốt hơn.
+Next.js also supports managing titles, descriptions, Open Graph images, and other metadata. Crawlers can therefore read content and metadata earlier, improving indexing and link sharing.
 
-### 21. Hiệu năng tải trang đầu tiên của React và Next.js khác nhau như thế nào?
+### 21. How does first-page-load performance differ between React and Next.js?
 
-React CSR thường phải tải JavaScript rồi mới tạo giao diện, nên First Load có thể phải chờ lâu hơn.
+A React CSR application usually needs to load JavaScript before creating the interface, so the first load may take longer.
 
-Next.js có thể gửi HTML đã được render từ server hoặc file HTML tĩnh trước khi JavaScript hoàn tất. Nhờ đó nội dung có thể hiển thị sớm hơn. Tuy nhiên, hiệu năng thực tế còn phụ thuộc vào kích thước bundle, dữ liệu, máy chủ và cách tối ưu của ứng dụng.
+Next.js can send server-rendered HTML or a static HTML file before all JavaScript has finished loading. This can make content appear earlier. Actual performance still depends on bundle size, data, server performance, and application optimization.
 
-### 22. Cấu trúc dự án React và Next.js khác nhau ra sao?
+### 22. How do React and Next.js project structures differ?
 
-Dự án React thường cho phép tự chọn cấu trúc thư mục và tự cài các thư viện routing, data fetching hoặc cấu hình build.
+A React project usually allows developers to choose the folder structure and install routing, data-fetching, or build-configuration libraries themselves.
 
-Next.js có các quy ước rõ ràng hơn, ví dụ:
+Next.js has clearer conventions, for example:
 
-- `app/` cho App Router.
-- `pages/` cho Pages Router.
-- `public/` cho tài nguyên tĩnh.
-- `next.config.js` hoặc `next.config.ts` cho cấu hình Next.js.
-- `layout.tsx`, `page.tsx` và các file đặc biệt cho từng chức năng.
+- `app/` for the App Router.
+- `pages/` for the Pages Router.
+- `public/` for static assets.
+- `next.config.js` or `next.config.ts` for Next.js configuration.
+- `layout.tsx`, `page.tsx`, and special files for specific features.
 
-### 23. Next.js có thay thế React không? Vì sao?
+### 23. Does Next.js replace React? Why?
 
-Không. Next.js được xây dựng trên React và sử dụng component, JSX, props, state và Hooks của React. Next.js bổ sung các tính năng và quy ước cho ứng dụng lớn hơn, chứ không thay thế kiến thức React.
+No. Next.js is built on React and uses React components, JSX, props, state, and Hooks. Next.js adds features and conventions for larger applications; it does not replace React knowledge.
 
-### 24. Khi nào nên dùng React thuần và khi nào nên dùng Next.js?
+### 24. When should plain React or Next.js be used?
 
-Nên dùng React thuần khi:
+Use plain React when:
 
-- Xây dựng SPA nội bộ hoặc dashboard.
-- Ứng dụng không yêu cầu SEO cao.
-- Muốn tự do lựa chọn thư viện và cấu trúc dự án.
-- Backend và frontend được triển khai tách biệt.
+- Building an internal SPA or dashboard.
+- The application does not require strong SEO.
+- You want freedom to choose libraries and project structure.
+- The backend and frontend are deployed separately.
 
-Nên dùng Next.js khi:
+Use Next.js when:
 
-- Cần SEO và thời gian hiển thị nội dung đầu tiên tốt.
-- Xây dựng website công khai, blog, thương mại điện tử hoặc landing page.
-- Muốn có file-based routing, SSR, SSG, ISR và tối ưu hình ảnh.
-- Muốn kết hợp giao diện với một số chức năng server trong cùng dự án.
+- SEO and first-content display time are important.
+- Building a public website, blog, e-commerce site, or landing page.
+- You want file-based routing, SSR, SSG, ISR, and image optimization.
+- You want to combine the UI with some server features in one project.
 
-## Phần 3. Next.js
+## Part 3. Next.js
 
-### 25. App Router và Pages Router trong Next.js là gì?
+### 25. What are the App Router and Pages Router in Next.js?
 
-**Pages Router** là hệ thống routing truyền thống sử dụng thư mục `pages/`. Nó dùng các hàm như `getStaticProps` và `getServerSideProps` để lấy dữ liệu.
+**Pages Router** is the traditional routing system that uses the `pages/` directory. It uses functions such as `getStaticProps` and `getServerSideProps` to fetch data.
 
-**App Router** là hệ thống routing mới sử dụng thư mục `app/`. App Router hỗ trợ React Server Components, nested layouts, loading UI, error UI và Server Actions. Với dự án mới, App Router thường là lựa chọn được khuyến nghị.
+**App Router** is the newer routing system that uses the `app/` directory. It supports React Server Components, nested layouts, loading UI, error UI, and Server Actions. For new projects, App Router is usually the recommended choice.
 
-### 26. Server Component và Client Component khác nhau như thế nào?
+### 26. What is the difference between Server Components and Client Components?
 
-**Server Component** được render trên server, không gửi toàn bộ logic component xuống trình duyệt. Component này phù hợp để lấy dữ liệu và giảm JavaScript phía client.
+**Server Components** are rendered on the server and do not send all component logic to the browser. They are suitable for fetching data and reducing client-side JavaScript.
 
-**Client Component** chạy ở phía trình duyệt và cần thêm chỉ thị `"use client"`. Nó được dùng khi cần state, event handler, các Hook như `useState`, hoặc API trình duyệt như `window` và `localStorage`.
+**Client Components** run in the browser and require the `"use client"` directive. They are used when state, event handlers, Hooks such as `useState`, or browser APIs such as `window` and `localStorage` are needed.
 
-Server Component giúp giảm bundle client, còn Client Component phù hợp với giao diện có tương tác.
+Server Components reduce the client bundle, while Client Components are suitable for interactive interfaces.
 
-### 27. SSR (Server-Side Rendering) là gì?
+### 27. What is SSR (Server-Side Rendering)?
 
-SSR là kỹ thuật server tạo HTML cho mỗi request dựa trên dữ liệu hiện tại rồi gửi HTML đó về trình duyệt. SSR phù hợp với nội dung cần cập nhật thường xuyên hoặc phụ thuộc vào request, cookie hay thông tin người dùng.
+SSR is a technique in which the server creates HTML for each request using current data and sends that HTML to the browser. SSR is suitable for content that changes frequently or depends on the request, cookies, or user information.
 
-### 28. SSG (Static Site Generation) là gì?
+### 28. What is SSG (Static Site Generation)?
 
-SSG là kỹ thuật tạo sẵn các file HTML tĩnh trong quá trình build. Khi người dùng truy cập, máy chủ có thể trả về file tĩnh rất nhanh.
+SSG generates static HTML files during the build. When a user visits the page, the server can return the static file very quickly.
 
-SSG phù hợp với nội dung ít thay đổi như blog, tài liệu, trang giới thiệu và landing page.
+SSG is suitable for content that changes infrequently, such as blogs, documentation, introductory pages, and landing pages.
 
-### 29. ISR (Incremental Static Regeneration) là gì?
+### 29. What is ISR (Incremental Static Regeneration)?
 
-ISR là cách cập nhật một trang tĩnh sau khi ứng dụng đã được build mà không cần build lại toàn bộ website. Trang có thể được tạo lại theo thời gian cấu hình hoặc được revalidate khi có sự kiện phù hợp.
+ISR updates a static page after the application has been built without rebuilding the entire website. A page can be regenerated after a configured period or revalidated when an appropriate event occurs.
 
-ISR kết hợp ưu điểm tốc độ của SSG với khả năng cập nhật nội dung của SSR.
+ISR combines the speed of SSG with the content-update capability of SSR.
 
-### 30. File-based Routing trong Next.js hoạt động như thế nào?
+### 30. How does file-based routing work in Next.js?
 
-File-based Routing ánh xạ cấu trúc file và thư mục thành URL:
+File-based routing maps the file and folder structure to URLs:
 
-- `app/page.tsx` tạo route `/`.
-- `app/about/page.tsx` tạo route `/about`.
-- `app/blog/[slug]/page.tsx` tạo dynamic route `/blog/:slug`.
-- `app/blog/layout.tsx` tạo layout dùng chung cho các route bên trong `blog`.
+- `app/page.tsx` creates the `/` route.
+- `app/about/page.tsx` creates the `/about` route.
+- `app/blog/[slug]/page.tsx` creates the dynamic `/blog/:slug` route.
+- `app/blog/layout.tsx` creates a shared layout for routes inside `blog`.
 
-Nhờ đó, route được tạo theo quy ước thay vì phải đăng ký thủ công.
+Routes are created by convention instead of being registered manually.
 
-### 31. Dynamic Route trong Next.js là gì?
+### 31. What is a Dynamic Route in Next.js?
 
-Dynamic Route là route có một hoặc nhiều phần thay đổi theo URL. Tên thư mục hoặc file được đặt trong dấu ngoặc vuông.
+A Dynamic Route is a route with one or more URL parts that can change. The folder or file name is placed inside square brackets.
 
-Ví dụ, `app/products/[id]/page.tsx` có thể xử lý các URL `/products/1` và `/products/2`. Giá trị `id` được lấy từ params để tải dữ liệu tương ứng.
+For example, `app/products/[id]/page.tsx` can handle `/products/1` and `/products/2`. The `id` value is read from `params` to load the corresponding data.
 
-### 32. `layout.tsx` trong App Router dùng để làm gì?
+### 32. What is `layout.tsx` used for in the App Router?
 
-`layout.tsx` định nghĩa giao diện dùng chung cho một route và các route con, chẳng hạn như navbar, sidebar hoặc footer. Layout được giữ lại khi chuyển đổi giữa các trang con, giúp tránh việc render lại toàn bộ phần giao diện chung.
+`layout.tsx` defines a shared interface for a route and its child routes, such as a navbar, sidebar, or footer. The layout remains when navigating between child pages, which avoids re-rendering the entire shared interface.
 
-Root layout trong `app/layout.tsx` thường chứa thẻ `html`, `body`, font và các provider dùng toàn ứng dụng.
+The root layout in `app/layout.tsx` usually contains the `html` and `body` elements, fonts, and providers used throughout the application.
 
-### 33. API Routes (Route Handlers) trong Next.js là gì?
+### 33. What are API Routes (Route Handlers) in Next.js?
 
-Route Handlers cho phép tạo các endpoint HTTP bên trong thư mục `app`, thường dùng file `route.ts` hoặc `route.js`.
+Route Handlers create HTTP endpoints inside the `app` directory, usually with a `route.ts` or `route.js` file.
 
 ```ts
 export async function GET() {
@@ -277,81 +277,81 @@ export async function GET() {
 }
 ```
 
-Route Handler có thể xử lý các phương thức như `GET`, `POST`, `PUT`, `PATCH` và `DELETE`, đồng thời dùng để kết nối cơ sở dữ liệu hoặc xử lý logic phía server.
+A Route Handler can process methods such as `GET`, `POST`, `PUT`, `PATCH`, and `DELETE`. It can also connect to a database or handle server-side logic.
 
-### 34. `getStaticProps` và `getServerSideProps` là gì? Chúng dùng trong trường hợp nào?
+### 34. What are `getStaticProps` and `getServerSideProps`? When are they used?
 
-Đây là các hàm của **Pages Router**:
+These are functions from the **Pages Router**:
 
-- `getStaticProps` lấy dữ liệu tại thời điểm build, phù hợp với SSG. Có thể kết hợp `revalidate` để dùng ISR.
-- `getServerSideProps` lấy dữ liệu trên server cho mỗi request, phù hợp với SSR và dữ liệu cần cập nhật liên tục.
+- `getStaticProps` fetches data during the build and is suitable for SSG. It can be combined with `revalidate` to use ISR.
+- `getServerSideProps` fetches data on the server for every request and is suitable for SSR and frequently changing data.
 
-Hai hàm này không được dùng trong `app/` của App Router. App Router sử dụng việc fetch dữ liệu trong Server Component và các cơ chế caching/revalidation mới.
+These functions are not used in the `app/` directory of the App Router. The App Router fetches data in Server Components and uses newer caching and revalidation mechanisms.
 
-### 35. `next/image` giúp tối ưu hình ảnh như thế nào?
+### 35. How does `next/image` optimize images?
 
-`next/image` là component tối ưu hình ảnh của Next.js. Nó hỗ trợ:
+`next/image` is the Next.js image-optimization component. It supports:
 
-- Resize ảnh theo kích thước cần thiết.
-- Tự động dùng định dạng hiện đại như WebP hoặc AVIF khi phù hợp.
-- Lazy loading ảnh ngoài vùng nhìn thấy.
-- Giúp hạn chế layout shift thông qua `width`, `height` hoặc `fill`.
-- Tối ưu ảnh local và ảnh từ remote domain đã được khai báo.
+- Resizing images to the required dimensions.
+- Automatically using modern formats such as WebP or AVIF when appropriate.
+- Lazy loading images outside the viewport.
+- Reducing layout shift through `width`, `height`, or `fill`.
+- Optimizing local images and remote images from configured domains.
 
-Khi dùng ảnh từ nguồn bên ngoài, cần khai báo domain hoặc `remotePatterns` trong `next.config.js`/`next.config.ts`.
+When using images from an external source, the domain or `remotePatterns` must be configured in `next.config.js` or `next.config.ts`.
 
-### 36. Middleware trong Next.js là gì?
+### 36. What is Middleware in Next.js?
 
-Middleware là đoạn code chạy trước khi request được hoàn tất. Middleware có thể kiểm tra đường dẫn, xác thực người dùng, redirect, rewrite URL, thêm hoặc đọc cookie và header.
+Middleware is code that runs before a request is completed. It can check paths, authenticate users, redirect, rewrite URLs, and read or add cookies and headers.
 
-Middleware thường được đặt trong file `middleware.ts` ở thư mục gốc dự án. Cần cấu hình `matcher` nếu chỉ muốn áp dụng middleware cho một số route.
+Middleware is usually placed in a `middleware.ts` file at the project root. A `matcher` should be configured when the middleware only applies to specific routes.
 
-### 37. Làm thế nào để điều hướng giữa các trang trong Next.js?
+### 37. How can pages be navigated in Next.js?
 
-Có thể điều hướng bằng nhiều cách:
+There are several ways to navigate:
 
-- Dùng component `Link` cho liên kết trong ứng dụng:
+- Use the `Link` component for internal links:
 
 ```tsx
 <Link href="/about">About</Link>
 ```
 
-- Dùng `useRouter` trong Client Component cho điều hướng bằng code:
+- Use `useRouter` in a Client Component for programmatic navigation:
 
 ```tsx
 const router = useRouter();
 router.push('/about');
 ```
 
-- Dùng `redirect` trong Server Component hoặc server-side logic khi cần chuyển hướng từ phía server.
+- Use `redirect` in a Server Component or server-side logic when a redirect must happen on the server.
 
-### 38. Metadata và SEO trong Next.js được xử lý như thế nào?
+### 38. How are Metadata and SEO handled in Next.js?
 
-Next.js hỗ trợ khai báo metadata tĩnh bằng `metadata` hoặc tạo metadata động bằng `generateMetadata` trong App Router.
+Next.js supports static metadata through `metadata` and dynamic metadata through `generateMetadata` in the App Router.
 
-Metadata có thể gồm `title`, `description`, `keywords`, ảnh Open Graph, Twitter Card và canonical URL. Nội dung trang cần có heading hợp lý, ảnh có `alt`, liên kết rõ ràng và HTML có ngữ nghĩa để hỗ trợ SEO tốt hơn.
+Metadata can include a `title`, `description`, `keywords`, Open Graph images, Twitter Cards, and a canonical URL. Page content should also use proper headings, meaningful `alt` text, clear links, and semantic HTML to improve SEO.
 
-### 39. Next.js có hỗ trợ TypeScript không?
+### 39. Does Next.js support TypeScript?
 
-Có. Next.js hỗ trợ TypeScript trực tiếp. Khi tạo hoặc đổi file sang `.ts` và `.tsx`, Next.js có thể tạo `tsconfig.json` và cài các kiểu cần thiết. TypeScript giúp kiểm tra kiểu dữ liệu cho props, state, API response và các hàm trong quá trình phát triển.
+Yes. Next.js supports TypeScript directly. When a file is created or changed to `.ts` or `.tsx`, Next.js can create `tsconfig.json` and install the required types. TypeScript checks the types of props, state, API responses, and functions during development.
 
-### 40. Có thể deploy dự án Next.js lên những nền tảng nào?
+### 40. Which platforms can host a Next.js project?
 
-Có thể deploy Next.js lên nhiều nền tảng như:
+Next.js can be deployed to many platforms, including:
 
-- **Vercel:** Nền tảng được tối ưu cho Next.js, hỗ trợ preview deployment và CI/CD từ Git.
-- **Netlify:** Phù hợp với nhiều ứng dụng frontend và có hỗ trợ Next.js.
-- **AWS:** Có thể triển khai thông qua Amplify, server riêng, container hoặc các dịch vụ AWS khác.
-- **Docker:** Đóng gói ứng dụng để chạy trên bất kỳ máy chủ nào hỗ trợ container.
-- **Railway, Render, DigitalOcean** và các nền tảng Node.js khác.
+- **Vercel:** Optimized for Next.js, with preview deployments and Git-based CI/CD.
+- **Netlify:** Suitable for many frontend applications and supports Next.js.
+- **AWS:** Can be deployed through Amplify, a dedicated server, containers, or other AWS services.
+- **Docker:** Packages the application to run on any container-compatible server.
+- **Railway, Render, DigitalOcean**, and other Node.js platforms.
 
-Khi deploy cần kiểm tra biến môi trường, lệnh build, cấu hình image remote, API và chế độ rendering mà ứng dụng đang sử dụng.
+Before deployment, check environment variables, the build command, remote-image configuration, APIs, and the rendering modes used by the application.
 
-## Khó khăn gặp phải
+## Challenges Encountered
 
-- **Thiết kế wireframe:** Khó khăn là sắp xếp bố cục wireframe sao cho đúng với yêu cầu, thể hiện rõ user flow và dễ đọc. Cần xác định thứ tự ưu tiên của nội dung, vị trí các chức năng chính và giữ bố cục nhất quán trước khi bắt đầu code.
-- **Lựa chọn React hay Next.js cho SEO:** Khi muốn xây dựng website có SEO, Next.js phù hợp hơn React thuần vì hỗ trợ SSR và SSG, giúp nội dung được render thành HTML sớm hơn để crawler dễ đọc. Next.js cũng có sẵn cách quản lý metadata như title, description và Open Graph. React vẫn có thể làm SEO, nhưng thường cần bổ sung thêm thư viện hoặc giải pháp rendering khác nên phải tự cấu hình nhiều hơn.
+- **Wireframe design:** The challenge was arranging the wireframe layout to meet the requirements, clearly show the user flow, and remain easy to read. The content priorities, main feature positions, and layout consistency had to be decided before coding.
+- **Choosing React or Next.js for SEO:** Next.js is more suitable for an SEO-focused website because it supports SSR and SSG, which render content as HTML earlier for crawlers. Next.js also provides built-in ways to manage metadata such as titles, descriptions, and Open Graph data. React can still support SEO, but it usually needs additional libraries or rendering solutions and more manual configuration.
 
-## Portfolio
+## Landing Page
 
-[Xem portfolio cá nhân](https://loclnxportfolio.vercel.app/)
+[View personal portfolio](https://loclnxportfolio.vercel.app/)

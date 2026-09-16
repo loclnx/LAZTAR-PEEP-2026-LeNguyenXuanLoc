@@ -21,8 +21,99 @@ Những lệnh hoạt động với Git:
 LƯU Ý: LUÔN PHẢI FETCH VÀ PULL CODE VỀ ĐỂ TRÁNH CONFLICT, VÀ CHECK BRANCH HIỆN TẠI
 
 CÁCH GIẢI QUYẾT CONFLICT THƯỜNG GẶP:
-1. ĐỐI VỚI CHƯA COMMIT: Dùng 'git stash' để cất tạm những thay đổi bạn chưa commit ra khỏi working directory, để thư mục code trở về trạng thái sạch. Sau đó pull code mới về, dùng 'git stash pop' để lấy lại những file đã cất tạm, rồi git add git commit push lên bình thường.
-2. ĐỐI VỚI VIỆC ĐÃ COMMIT: Dùng 'git pull --rebase' để đưa commit lên remote mới nhất, sau đó sửa conflict thủ công sau đó 'git add .' và 'git rebase --continue'
+
+Khi Git báo conflict, trước tiên kiểm tra trạng thái repository:
+
+```bash
+git status
+```
+
+Mở các file bị ảnh hưởng, xử lý phần code giữa các conflict marker, xóa marker, kiểm tra lại bằng `git diff` rồi chạy `git add`.
+
+#### 1. Thay đổi chưa commit (`git stash`)
+
+```bash
+git stash
+git pull
+```
+
+#### 2. Khôi phục thay đổi đã stash (`git stash pop`)
+
+```bash
+git stash pop
+```
+
+Nếu `git stash pop` bị conflict, sửa file rồi chạy `git add .`, `git commit -m "Resolve stash conflict"` và `git push`.
+
+#### 3. Đã commit nhưng chưa push (`git pull --rebase`)
+
+```bash
+git pull --rebase
+# sửa conflict
+git add .
+git rebase --continue
+git push
+```
+
+Có thể hủy bằng `git rebase --abort`.
+
+#### 4. Gộp branch (`git merge`)
+
+```bash
+git switch main
+git merge <ten-branch>
+# sửa conflict
+git add .
+git commit
+git push
+```
+
+Hủy bằng `git merge --abort`.
+
+#### 5. Áp dụng một commit (`git cherry-pick`)
+
+```bash
+git cherry-pick <commit-id>
+# sửa conflict
+git add .
+git cherry-pick --continue
+```
+
+Hủy bằng `git cherry-pick --abort`.
+
+#### 6. Rebase branch (`git rebase`)
+
+```bash
+git switch <ten-branch>
+git rebase main
+# sửa conflict
+git add .
+git rebase --continue
+```
+
+Lặp lại nếu có conflict tiếp theo. Hủy bằng `git rebase --abort`.
+
+#### 7. Hoàn tác commit (`git revert`)
+
+```bash
+git revert <commit-id>
+# sửa conflict
+git add .
+git revert --continue
+git push
+```
+
+Hủy bằng `git revert --abort`.
+
+#### 8. Áp dụng patch (`git apply`)
+
+Nếu patch không áp dụng được hoàn toàn, Git có thể tạo file `.rej` thay vì conflict marker. Đọc phần hunk bị từ chối, đưa thay đổi cần thiết vào file gốc, xóa file `.rej` khi không còn cần rồi chạy:
+
+```bash
+git add .
+git commit -m "Apply patch"
+```
+
 
 ### Thực hành
 

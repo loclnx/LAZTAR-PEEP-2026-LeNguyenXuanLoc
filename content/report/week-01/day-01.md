@@ -24,8 +24,98 @@ Always fetch and pull the latest code to avoid conflicts, and check the current 
 
 ### COMMON CONFLICT RESOLUTION:
 
-1. For uncommitted changes: Use `git stash` to temporarily store changes that have not been committed and restore the working directory to a clean state. Then pull the latest code, use `git stash pop` to restore the saved files, and run `git add`, `git commit`, and `git push` as usual.
-2. For changes that have already been committed: Use `git pull --rebase` to apply your commits on top of the latest remote changes. Then resolve conflicts manually, run `git add .`, and continue with `git rebase --continue`.
+When Git reports a conflict, first check the repository state:
+
+```bash
+git status
+```
+
+Open the affected files and resolve the sections between the conflict markers. Keep or combine the correct code, remove the markers, review the result with `git diff`, and stage the resolved files with `git add`.
+
+#### 1. Uncommitted changes (`git stash`)
+
+```bash
+git stash
+git pull
+```
+
+#### 2. Restoring stashed changes (`git stash pop`)
+
+```bash
+git stash pop
+```
+
+If `git stash pop` causes a conflict, resolve it and run `git add .`, `git commit -m "Resolve stash conflict"`, and `git push`.
+
+#### 3. Committed but not pushed (`git pull --rebase`)
+
+```bash
+git pull --rebase
+# resolve the conflict
+git add .
+git rebase --continue
+git push
+```
+
+Abort with `git rebase --abort` if necessary.
+
+#### 4. Merging branches (`git merge`)
+
+```bash
+git switch main
+git merge <branch-name>
+# resolve the conflict
+git add .
+git commit
+git push
+```
+
+Abort with `git merge --abort`.
+
+#### 5. Applying a commit (`git cherry-pick`)
+
+```bash
+git cherry-pick <commit-id>
+# resolve the conflict
+git add .
+git cherry-pick --continue
+```
+
+Abort with `git cherry-pick --abort`.
+
+#### 6. Rebasing a branch (`git rebase`)
+
+```bash
+git switch <branch-name>
+git rebase main
+# resolve the conflict
+git add .
+git rebase --continue
+```
+
+Repeat if another conflict occurs. Abort with `git rebase --abort`.
+
+#### 7. Reverting a commit (`git revert`)
+
+```bash
+git revert <commit-id>
+# resolve the conflict
+git add .
+git revert --continue
+git push
+```
+
+Abort with `git revert --abort`.
+
+#### 8. Applying a patch (`git apply`)
+
+If a patch cannot be applied completely, Git may create a `.rej` file instead of conflict markers. Review the rejected hunk, apply the required changes manually, remove the `.rej` file when it is no longer needed, then run:
+
+```bash
+git add .
+git commit -m "Apply patch"
+```
+
 
 ### PRATICE
 
