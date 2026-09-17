@@ -1,9 +1,5 @@
 +++
-title = "Day 03 - 17/09/2026 (REMOTE
-
-
-
-) Landing Page GPT-6 Astra"
+title = "Day 03 - 17/09/2026 (REMOTE) Landing Page GPT-6 Astra"
 weight = 3
 +++
 
