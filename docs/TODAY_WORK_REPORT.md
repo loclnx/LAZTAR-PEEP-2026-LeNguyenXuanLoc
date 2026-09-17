@@ -1,11 +1,6 @@
-+++
-title = "Day 03 - 17/09/2026 (REMOTE) Landing Page GPT-6 Astra"
-weight = 3
-+++
+# Báo cáo công việc hôm nay — Landing Page GPT-6 Astra
 
-### Báo cáo Ngày 03
-
-## A. Công việc đã thực hiện
+## Nội dung đã thực hiện
 
 - Xây dựng landing page giới thiệu về GPT-6 Astra bằng Next.js.
 - Thiết kế giao diện theo hướng hiện đại, tập trung vào chủ đề AI agent với tông xanh lá, nền sáng và bố cục responsive.
@@ -24,7 +19,7 @@ weight = 3
 - Cập nhật metadata trang sang tiếng Việt, gồm tiêu đề và mô tả cho GPT-6 Astra.
 - Kiểm tra production build thành công bằng lệnh `npm run build`.
 
-## B. Khó khăn gặp phải
+## Khó khăn gặp phải
 
 ### 1. Tổ chức nội dung dài trên một landing page
 
@@ -50,9 +45,6 @@ Một số tiêu đề cần xuống dòng hoặc nhấn mạnh bằng chữ ngh
 
 Vì vậy mock data được đặt trong file `.tsx` thay vì `.ts`, giúp dữ liệu có thể chứa các phần tử React khi thật sự cần thiết.
 
-## C. Kết quả
+## Kết quả
 
 Landing page hiện đã có nội dung đầy đủ, hỗ trợ EN/VI, responsive trên nhiều kích thước màn hình và có cấu trúc data/UI tách biệt để thuận tiện mở rộng sau này.
-
-
-[gpt6astra-pi.vercel.app](https://gpt6astra-pi.vercel.app/)
