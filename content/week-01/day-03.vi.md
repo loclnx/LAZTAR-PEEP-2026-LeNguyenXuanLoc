@@ -53,3 +53,6 @@ Vì vậy mock data được đặt trong file `.tsx` thay vì `.ts`, giúp dữ
 ## C. Kết quả
 
 Landing page hiện đã có nội dung đầy đủ, hỗ trợ EN/VI, responsive trên nhiều kích thước màn hình và có cấu trúc data/UI tách biệt để thuận tiện mở rộng sau này.
+
+
+[gpt6astra-pi.vercel.app](https://gpt6astra-pi.vercel.app/)

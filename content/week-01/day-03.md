@@ -1,5 +1,9 @@
 +++
-title = "Day 03 - 17/09/2026 (REMOTE) Landing Page GPT-6 Astra"
+title = "Day 03 - 17/09/2026 (REMOTE
+
+
+
+) Landing Page GPT-6 Astra"
 weight = 3
 +++
 
@@ -53,3 +57,6 @@ That is why the mock data file was placed in `.tsx` instead of `.ts`, allowing R
 ## C. Result
 
 The landing page is now complete with rich content, EN/VI support, responsive behavior across screen sizes, and a clearer separation between UI and data for easier future extension.
+
+
+[gpt6astra-pi.vercel.app](https://gpt6astra-pi.vercel.app/)
