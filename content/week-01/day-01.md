@@ -1,101 +1,200 @@
+
 +++
-title = "Day 01 - 15/06/2026"
+title = "Day 01 - 15/09/2026 (ON-SITE) Git Report"
 weight = 1
 +++
 
-## Topics Learned
+### Report DAY 1
 
-### Git
+### NOTE:
 
-#### Common Commands
+Working with Git:
 
-| Command            | Meaning                                        |
-| ------------------ | ---------------------------------------------- |
-| git init           | Create a new Git repository                    |
-| git remote         | Manage connections to remote repositories      |
-| git clone          | Copy a remote repository to the local machine  |
-| git fetch          | Download remote changes without merging them   |
-| git pull           | Download and merge remote changes              |
-| git status         | Show the current repository state              |
-| git branch         | List, create, or delete branches               |
-| git switch         | Move to another branch                         |
-| git checkout       | Switch branches or restore files               |
-| git add            | Stage changes for the next commit              |
-| git commit         | Save staged changes to the repository history  |
-| git commit --amend | Update the latest commit                       |
-| git push           | Upload local commits to a remote repository    |
-| git reset          | Unstage changes or move commit history         |
-| git rebase         | Reapply commits on top of another branch       |
-| git rebase -i      | Edit, squash, or reorder commits interactively |
-| git stash          | Temporarily save uncommitted work              |
-| git stash pop      | Restore the latest stashed work                |
-| git merge          | Combine changes from another branch            |
-| git cherry-pick    | Apply a specific commit to the current branch  |
+- Creating a repository with `git init` and connecting it to a remote with `git remote`.
+- Copying an existing repository with `git clone`, and synchronizing changes with `git fetch` and `git pull`.
+- Checking the working tree with `git status` and managing branches with `git branch`, `git switch`, and `git checkout`.
+- Preparing changes with `git add`, saving them with `git commit`, and correcting the latest commit with `git commit --amend`.
+- Uploading changes with `git push` and undoing or reorganizing commits with `git reset` and `git rebase`.
+- Using interactive rebase with `git rebase -i` to review and clean up commit history.
+- Temporarily saving unfinished work with `git stash` and restoring it with `git stash pop`.
+- Combining work from different branches with `git merge` and applying a specific commit with `git cherry-pick`.
 
-#### Merge Conflict Handling
+### IMPORTANT NOTE:
 
-| Situation                        | Solution in Code Source Control                                     |
-| -------------------------------- | ------------------------------------------------------------------- |
-| Keep changes from both branches  | Open the file, edit the conflict manually, then mark it as resolved |
-| Keep the current branch version  | Use `Accept Current Change` in the conflict editor                  |
-| Keep the incoming branch version | Use `Accept Incoming Change` in the conflict editor                 |
-| Cancel the merge                 | Open Source Control, use the `...` menu, then choose `Abort Merge`  |
-| Resolve conflicts manually       | Review the marked conflict blocks and keep the correct final code   |
+Always fetch and pull the latest code to avoid conflicts, and check the current branch before making changes.
 
-### TypeScript
+### COMMON CONFLICT RESOLUTION:
 
-#### Interface vs Type
+When Git reports a conflict, first check the repository state:
 
-- Use `interface` when the main goal is to describe object structure and support inheritance.
-- Use `type` when the shape is more complex, such as a union, tuple, primitive alias, or function type.
-- Both are valid for object modeling, so choose the one that fits the use case and team convention.
+```bash
+git status
+```
 
-#### Union Type
+Open the affected files and resolve the sections between the conflict markers. Keep or combine the correct code, remove the markers, review the result with `git diff`, and stage the resolved files with `git add`.
 
-- A union type allows a value to have more than one possible type.
-- It uses the `|` operator.
+#### 1. Uncommitted changes (`git stash`)
 
-#### Omit Utility Type
+```bash
+git stash
+git pull
+```
 
-- `Omit` creates a new type by removing one or more properties from an existing type.
-- It is useful when reusing a model but hiding fields that are not needed.
+#### 2. Restoring stashed changes (`git stash pop`)
 
-#### Extends
+```bash
+git stash pop
+```
 
-- `extends` lets an interface inherit properties from another interface.
-- It reduces duplication and keeps related types consistent.
+If `git stash pop` causes a conflict, resolve it and run `git add .`, `git commit -m "Resolve stash conflict"`, and `git push`.
 
----
+#### 3. Committed but not pushed (`git pull --rebase`)
 
-### ESLint
+```bash
+git pull --rebase
+# resolve the conflict
+git add .
+git rebase --continue
+git push
+```
 
-#### Purpose of ESLint
+Abort with `git rebase --abort` if necessary.
 
-- ESLint is a static analysis tool for JavaScript and TypeScript.
-- It helps detect errors and warnings before runtime.
-- It keeps code aligned with project conventions.
+#### 4. Merging branches (`git merge`)
 
-#### Common Errors and Warnings
+```bash
+git switch main
+git merge <branch-name>
+# resolve the conflict
+git add .
+git commit
+git push
+```
 
-- `no-unused-vars`: a variable is declared but not used.
-- `no-undef`: a variable is used before it is defined.
-- `react-hooks/rules-of-hooks`: React Hooks are used in the wrong place.
-- `react-hooks/exhaustive-deps`: a `useEffect` dependency is missing.
-- `no-magic-numbers`: a hard-coded number is used without clear meaning.
+Abort with `git merge --abort`.
 
-## Lessons Learned
+#### 5. Applying a commit (`git cherry-pick`)
 
-- Avoid **"magic numbers"**.
-- Do not commit `node_modules`.
-- Understand the difference between merge and rebase.
-- Use `git add <file>` instead of `git add .` when possible.
+```bash
+git cherry-pick <commit-id>
+# resolve the conflict
+git add .
+git cherry-pick --continue
+```
 
-### Key Principles
+Abort with `git cherry-pick --abort`.
 
-- Organize `src/` by feature or by file type.
-- Keep configuration files at the project root.
-- Always add `node_modules/` and `dist/` to `.gitignore`.
-- Use clear and descriptive folder names.
-- Group related files together for easier navigation.
+#### 6. Rebasing a branch (`git rebase`)
 
+```bash
+git switch <branch-name>
+git rebase main
+# resolve the conflict
+git add .
+git rebase --continue
+```
 
+Repeat if another conflict occurs. Abort with `git rebase --abort`.
+
+#### 7. Reverting a commit (`git revert`)
+
+```bash
+git revert <commit-id>
+# resolve the conflict
+git add .
+git revert --continue
+git push
+```
+
+Abort with `git revert --abort`.
+
+#### 8. Applying a patch (`git apply`)
+
+If a patch cannot be applied completely, Git may create a `.rej` file instead of conflict markers. Review the rejected hunk, apply the required changes manually, remove the `.rej` file when it is no longer needed, then run:
+
+```bash
+git add .
+git commit -m "Apply patch"
+```
+
+### PRATICE
+
+#### 1. `git init`
+
+![git init](/images/report/day-01/git_init_remote_branch_add.png)
+
+#### 2. `git remote`
+
+![git remote](/images/report/day-01/git_init_remote_branch_add.png)
+
+#### 3. `git clone`
+
+![git fetch](/images/report/day-01/git_clone.png)
+
+#### 4. `git fetch`
+
+![git fetch](/images/report/day-01/git_fetch.png)
+
+#### 5. `git pull`
+
+![git fetch](/images/report/day-01/git_pull.png)
+
+#### 6. `git status`
+
+![git status](/images/report/day-01/git_status_switch.png)
+
+#### 7. `git branch`
+
+![git branch](/images/report/day-01/git_status_switch.png)
+
+#### 8. `git switch`
+
+![git switch](/images/report/day-01/git_status_switch.png)
+
+#### 9. `git checkout`
+
+![git checkout](/images/report/day-01/git_push_checkout.png)
+
+#### 10. `git add`
+
+![git add](/images/report/day-01/git_init_remote_branch_add.png)
+
+#### 11. `git commit`
+
+![git commit](/images/report/day-01/git_commit.png)
+
+#### 12. `git commit --amend`
+
+![git commit --amend](/images/report/day-01/git_commit_--amend.png)
+
+#### 13. `git push`
+
+![git push](/images/report/day-01/git_push_checkout.png)
+
+#### 14. `git reset`
+
+![git reset](/images/report/day-01/git_reset.png)
+
+#### 15. `git rebase`
+
+![git rebase](/images/report/day-01/git_rebase.png)
+
+#### 16. `git rebase -i`
+
+![git rebase](/images/report/day-01/github_rebase-i.png)
+
+#### 17. `git stash`
+
+![git rebase](/images/report/day-01/git_stash_stashpop.png)
+
+#### 18. `git stash pop`
+
+![git rebase](/images/report/day-01/git_stash_stashpop.png)
+
+#### 19. `git merge`
+
+![git merge](/images/report/day-01/conflic.png)
+
+#### 20. `git cherry-pick`
+
+![git cherry-pick](/images/report/day-01/git_cherry.png)

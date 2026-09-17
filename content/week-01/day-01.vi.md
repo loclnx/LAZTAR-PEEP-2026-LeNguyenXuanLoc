@@ -1,101 +1,198 @@
+
 +++
-title = "Ngày 01 - 15/06/2026"
+title = "Ngày 01 - 15/09/2026 (ON-SITE) Báo cáo Git"
 weight = 1
 +++
 
-## Topics Learned
+### Báo cáo Ngày 01
 
-### Git
+### Nội dung đã học
 
-#### Các câu lệnh phổ biến
+Những lệnh hoạt động với Git:
 
-| Lệnh               | Mô Tả                                            |
-| ------------------ | ------------------------------------------------ |
-| git init           | Khởi tạo kho lưu trữ Git mới                     |
-| git remote         | Quản lý kết nối kho lưu trữ từ xa                |
-| git clone          | Sao chép kho lưu trữ từ xa về máy cục bộ         |
-| git fetch          | Tải các thay đổi từ xa mà không hợp nhất         |
-| git pull           | Tải và hợp nhất các thay đổi từ xa               |
-| git status         | Hiển thị trạng thái hiện tại của kho lưu trữ     |
-| git branch         | Liệt kê, tạo hoặc xóa các nhánh                  |
-| git switch         | Chuyển sang nhánh khác                           |
-| git checkout       | Chuyển nhánh hoặc khôi phục tệp thư mục làm việc |
-| git add            | Chuẩn bị các thay đổi để commit                  |
-| git commit         | Ghi lại các thay đổi vào kho lưu trữ             |
-| git commit --amend | Sửa đổi commit cuối cùng                         |
-| git push           | Tải các commit cục bộ lên từ xa                  |
-| git reset          | Bỏ chuẩn bị hoặc đặt lại các commit              |
-| git rebase         | Áp dụng lại các commit trên một nhánh khác       |
-| git rebase -i      | Rebase tương tác để chỉnh sửa các commit         |
-| git stash          | Lưu các thay đổi chưa commit tạm thời            |
-| git stash pop      | Khôi phục các thay đổi đã lưu trữ                |
-| git merge          | Kết hợp các thay đổi từ nhánh khác               |
-| git cherry-pick    | Áp dụng các commit cụ thể từ nhánh khác          |
+- Khởi tạo repository bằng `git init` và kết nối với repository từ xa bằng `git remote`.
+- Sao chép repository bằng `git clone`, đồng bộ thay đổi bằng `git fetch` và `git pull`.
+- Kiểm tra trạng thái bằng `git status` và quản lý branch bằng `git branch`, `git switch` và `git checkout`.
+- Chuẩn bị thay đổi bằng `git add`, lưu thay đổi bằng `git commit` và chỉnh sửa commit gần nhất bằng `git commit --amend`.
+- Đẩy thay đổi lên repository từ xa bằng `git push`, hoàn tác hoặc sắp xếp lại commit bằng `git reset` và `git rebase`.
+- Sử dụng `git rebase -i` để xem lại và làm gọn lịch sử commit.
+- Tạm thời lưu thay đổi chưa hoàn thành bằng `git stash` và khôi phục bằng `git stash pop`.
+- Kết hợp thay đổi từ các branch bằng `git merge` và áp dụng một commit cụ thể bằng `git cherry-pick`.
 
-#### Xử Lý Xung Đột Git
+LƯU Ý: LUÔN PHẢI FETCH VÀ PULL CODE VỀ ĐỂ TRÁNH CONFLICT, VÀ CHECK BRANCH HIỆN TẠI
 
-| Tình Huống                                | Giải Pháp (Source Control)                                                                         |
-| ----------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Giữ lại thay đổi từ cả hai nhánh          | Mở tệp trong trình soạn thảo, chỉnh sửa thủ công để bao gồm cả hai thay đổi, rồi nhập vào dấu ✓    |
-| Giữ lại thay đổi từ nhánh hiện tại        | Di chuột qua dấu xung đột và nhập nút "Accept Current Change"                                      |
-| Giữ lại thay đổi từ nhánh đến             | Di chuột qua dấu xung đột và nhập nút "Accept Incoming Change"                                     |
-| Hủy hợp nhất và bắt đầu lại               | Nhập biểu tượng Source Control ở thanh bên, rồi nhập menu "..." và chọn "Abort Merge"              |
-| Giải quyết xung đột trong trình soạn thảo | Xung đột được đánh dấu bằng màu sắc, chỉnh sửa thủ công hoặc sử dụng giao diện giải quyết xung đột |
+CÁCH GIẢI QUYẾT CONFLICT THƯỜNG GẶP:
 
----
+Khi Git báo conflict, trước tiên kiểm tra trạng thái repository:
 
-### TypeScript
+```bash
+git status
+```
 
-#### Interface vs Type
+Mở các file bị ảnh hưởng, xử lý phần code giữa các conflict marker, xóa marker, kiểm tra lại bằng `git diff` rồi chạy `git add`.
 
-- `interface` chủ yếu dùng để định nghĩa cấu trúc object và hỗ trợ kế thừa thông qua `extends`.
-- `type` linh hoạt hơn và có thể định nghĩa object, union, tuple, kiểu primitive và kiểu function.
-- Cả hai đều có thể dùng để mô tả cấu trúc object trong TypeScript.
+#### 1. Thay đổi chưa commit (`git stash`)
 
-#### Union Type
+```bash
+git stash
+git pull
+```
 
-- Cho phép một biến nhận nhiều kiểu hoặc nhiều giá trị khác nhau.
-- Sử dụng toán tử `|` (OR).
+#### 2. Khôi phục thay đổi đã stash (`git stash pop`)
 
-#### Omit Utility Type
+```bash
+git stash pop
+```
 
-- Tạo một type mới bằng cách loại bỏ một hoặc nhiều thuộc tính từ type gốc.
-- Thường dùng để tái sử dụng model hoặc ẩn các field không cần thiết.
+Nếu `git stash pop` bị conflict, sửa file rồi chạy `git add .`, `git commit -m "Resolve stash conflict"` và `git push`.
 
-#### Extends
+#### 3. Đã commit nhưng chưa push (`git pull --rebase`)
 
-- Dùng để kế thừa thuộc tính từ interface khác.
-- Giúp tái sử dụng code và giảm lặp lại thuộc tính.
+```bash
+git pull --rebase
+# sửa conflict
+git add .
+git rebase --continue
+git push
+```
 
----
+Có thể hủy bằng `git rebase --abort`.
 
-### ESLint
+#### 4. Gộp branch (`git merge`)
 
-#### Purpose of ESLint
+```bash
+git switch main
+git merge <ten-branch>
+# sửa conflict
+git add .
+git commit
+git push
+```
 
-- Công cụ static code analysis cho JavaScript/TypeScript.
-- Giúp phát hiện lỗi và cảnh báo trước khi chạy chương trình.
-- Đảm bảo code tuân thủ coding convention của dự án.
+Hủy bằng `git merge --abort`.
 
-#### Common Errors and Warnings
+#### 5. Áp dụng một commit (`git cherry-pick`)
 
-- `no-unused-vars`: Biến khai báo nhưng không sử dụng.
-- `no-undef`: Sử dụng biến chưa khai báo.
-- `react-hooks/rules-of-hooks`: Sử dụng Hook sai quy tắc.
-- `react-hooks/exhaustive-deps`: Thiếu dependency trong `useEffect`.
-- `no-magic-numbers`: Sử dụng số hard-code không có ý nghĩa rõ ràng.
+```bash
+git cherry-pick <commit-id>
+# sửa conflict
+git add .
+git cherry-pick --continue
+```
 
-## Lessons Learned
+Hủy bằng `git cherry-pick --abort`.
 
-- Tránh **"magic number"**
-- Tránh commit node_modules.
-- Hiểu sự khác biệt giữa merge và rebase.
-- Sử dụng git add <file> thay vì git add . khi có thể.
+#### 6. Rebase branch (`git rebase`)
 
-## Key Principles
+```bash
+git switch <ten-branch>
+git rebase main
+# sửa conflict
+git add .
+git rebase --continue
+```
 
-- Tổ chức `src/` theo tính năng hoặc loại
-- Tách các tệp cấu hình ở mức gốc
-- Luôn thêm `node_modules/` và `dist/` vào `.gitignore`
-- Sử dụng tên thư mục rõ ràng và mô tả
-- Nhóm các tệp liên quan lại với nhau để dễ dàng điều hướng
+Lặp lại nếu có conflict tiếp theo. Hủy bằng `git rebase --abort`.
+
+#### 7. Hoàn tác commit (`git revert`)
+
+```bash
+git revert <commit-id>
+# sửa conflict
+git add .
+git revert --continue
+git push
+```
+
+Hủy bằng `git revert --abort`.
+
+#### 8. Áp dụng patch (`git apply`)
+
+Nếu patch không áp dụng được hoàn toàn, Git có thể tạo file `.rej` thay vì conflict marker. Đọc phần hunk bị từ chối, đưa thay đổi cần thiết vào file gốc, xóa file `.rej` khi không còn cần rồi chạy:
+
+```bash
+git add .
+git commit -m "Apply patch"
+```
+
+### Thực hành
+
+#### 1. `git init`
+
+![git init](/images/report/day-01/git_init_remote_branch_add.png)
+
+#### 2. `git remote`
+
+![git remote](/images/report/day-01/git_init_remote_branch_add.png)
+
+#### 3. `git clone`
+
+![git clone](/images/report/day-01/git_clone.png)
+
+#### 4. `git fetch`
+
+![git fetch](/images/report/day-01/git_fetch.png)
+
+#### 5. `git pull`
+
+![git pull](/images/report/day-01/git_pull.png)
+
+#### 6. `git status`
+
+![git status](/images/report/day-01/git_status_switch.png)
+
+#### 7. `git branch`
+
+![git branch](/images/report/day-01/git_status_switch.png)
+
+#### 8. `git switch`
+
+![git switch](/images/report/day-01/git_status_switch.png)
+
+#### 9. `git checkout`
+
+![git checkout](/images/report/day-01/git_push_checkout.png)
+
+#### 10. `git add`
+
+![git add](/images/report/day-01/git_init_remote_branch_add.png)
+
+#### 11. `git commit`
+
+![git commit](/images/report/day-01/git_commit.png)
+
+#### 12. `git commit --amend`
+
+![git commit --amend](/images/report/day-01/git_commit_--amend.png)
+
+#### 13. `git push`
+
+![git push](/images/report/day-01/git_push_checkout.png)
+
+#### 14. `git reset`
+
+![git reset](/images/report/day-01/git_reset.png)
+
+#### 15. `git rebase`
+
+![git rebase](/images/report/day-01/git_rebase.png)
+
+#### 16. `git rebase -i`
+
+![git rebase -i](/images/report/day-01/github_rebase-i.png)
+
+#### 17. `git stash`
+
+![git stash](/images/report/day-01/git_stash_stashpop.png)
+
+#### 18. `git stash pop`
+
+![git stash pop](/images/report/day-01/git_stash_stashpop.png)
+
+#### 19. `git merge`
+
+![git merge](/images/report/day-01/conflic.png)
+
+#### 20. `git cherry-pick`
+
+![git cherry-pick](/images/report/day-01/git_cherry.png)

@@ -1,88 +1,55 @@
 +++
-title = "Day 03 - 17/06/2026"
+title = "Day 03 - 17/09/2026 (REMOTE) Landing Page GPT-6 Astra"
 weight = 3
 +++
 
-## Completed Tasks
+### Day 03 Report
 
-### 1. Finalized the Custom T-Shirt Store Project Idea
+## A. Work Completed
 
-#### Project Objective
+- Built a landing page introducing GPT-6 Astra using Next.js.
+- Designed a modern interface with a green-themed visual system, bright background, and responsive layout.
+- Completed the main content sections:
+  - What GPT-6 Astra is.
+  - The capabilities and strengths of GPT-6 Astra.
+  - A 4-step registration and usage flow.
+  - Safety considerations when using it.
+  - A comparison table between GPT-6 Astra and GPT-5.6 Sol.
+- Added anchor-based navigation to jump quickly between sections.
+- Added bilingual support:
+  - English is the default language.
+  - Users can switch between EN and VI directly from the navigation bar.
+- Moved the bilingual mock content out of the page component and placed it in:
+  - `data/landing-mock-data.tsx`
+- Updated the page metadata in Vietnamese, including the title and description for GPT-6 Astra.
+- Verified the production build successfully with `npm run build`.
 
-Develop a custom T-shirt ordering system to practice fundamental e-commerce workflows, including product management, image uploads, order processing, and order administration.
+## B. Challenges Encountered
 
-> [Project Documentation Drive](https://drive.google.com/drive/folders/1gnnD7WcaAnyGG03nwvuGteWGj5RKcDg3?usp=sharing)
+### 1. Organizing a long landing page
 
-#### Customer Features
+The landing page needed to include many sections such as introduction, features, instructions, safety notes, and comparison. The challenge was keeping the content flow clear without making the page feel like a long wall of text.
 
-##### Account Management
+The solution was to divide the content into clearly separated sections, use numbered headings, alternate background colors, and add a comparison table to make the information easier to scan.
 
-* Sign up
-* Sign in / Sign out
-* Update profile information
+### 2. Supporting bilingual content while keeping the layout stable
 
-##### Product Catalog
+The English and Vietnamese versions of the content had different lengths. This easily caused misalignment in cards, headings, and tables, especially on smaller screens.
 
-* Browse available T-shirt templates
-* View product details:
+The solution was to use a flexible CSS Grid layout, responsive typography with `clamp()`, and mobile breakpoints to maintain visual balance.
 
-  * Product name
-  * Product image
-  * Price
-  * Description
+### 3. Separating mock data from the UI
 
-##### Product Customization
+At first, the bilingual content was embedded directly inside `page.tsx`, making the component long and harder to maintain. When adding or updating content or translations, it was time-consuming to find the right location.
 
-* Select color
-* Select size (S, M, L, XL)
-* Upload an image to be printed on the T-shirt
+The solution was to move the displayed data into `data/landing-mock-data.tsx`. The page component now focuses on rendering the UI and handling language switching.
 
-##### Order Management
+### 4. Formatting headings within mock data
 
-* Enter shipping information:
+Some headings needed line breaks or emphasis with italics. When the content was moved into mock data, these text elements had to be represented properly so the design still preserved the intended formatting.
 
-  * Recipient name
-  * Phone number
-  * Delivery address
-  * Note (optional)
-* Place an order
-* View order history
-* Track order status:
+That is why the mock data file was placed in `.tsx` instead of `.ts`, allowing React elements to be included when necessary.
 
-  * Pending
-  * Confirmed
-  * Shipping
-  * Completed
-  * Cancelled
+## C. Result
 
-#### Admin Features
-
-##### Product Management
-
-* Create products
-* Edit products
-* Delete products
-
-##### Order Management
-
-* View order list
-* View uploaded customer images
-* Update order status
-
-#### Payment
-
-* Cash on Delivery (COD) or a mock payment API
-* No real payment gateway integration
-
-### 2. Created Core System Diagrams
-
-* Use Case Diagram
-* Activity Diagrams:
-
-  * Order Placement Flow
-  * Order Tracking Flow
-* Sequence Diagram:
-
-  * Order Placement Flow
-
-> [Diagram Link](https://drive.google.com/file/d/1o_GBOS3tu2yS1wSgaQdFyCRMW6Mw7B0P/view?usp=sharing)
+The landing page is now complete with rich content, EN/VI support, responsive behavior across screen sizes, and a clearer separation between UI and data for easier future extension.
