@@ -8,7 +8,5 @@ chapter = true
 
 Daily PEEP 2026 notes for the second week. This week focused on Git practices, debugging workflows, and web fundamentals.
 
-- [Day 01 - Monday - Full day](day-01/)
-- [Day 02 - Thursday - Full day](day-02/)
-- [Day 03 - Friday - Full day](day-03/)
-
+- [Day 01 - Monday - 21/09/2026 (ON-SITE) ](day-01/)
+- [Day 02 - Tuesday - 22/09/2026 (REMOTE) ](day-02/)
