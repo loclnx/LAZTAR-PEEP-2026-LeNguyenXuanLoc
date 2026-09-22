@@ -8,7 +8,5 @@ chapter = true
 
 Ghi chú PEEP 2026 cho tuần thứ hai. Tuần này tập trung vào Git, quy trình debug và nền tảng web.
 
-- [Ngày 01 - Thứ Hai - Cả ngày](day-01/)
-- [Ngày 02 - Thứ Năm - Cả ngày](day-02/)
-- [Ngày 03 - Thứ Sáu - Cả ngày](day-03/)
-
+- [Ngày 01 - Thứ Hai - 21/09/2026 (ON-SITE) ](day-01/)
+- [Ngày 02 - Thứ Ba - 22/09/2026 (REMOTE) ](day-02/)
