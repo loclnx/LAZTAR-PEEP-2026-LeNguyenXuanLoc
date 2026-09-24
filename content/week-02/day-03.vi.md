@@ -60,7 +60,7 @@ Sơ đồ business flow cho cấu trúc kho và luồng vận hành đã đượ
 
 ## Nhận xét
 
-Ngày 03 cho thấy cấu trúc kho không chỉ là một bảng dữ liệu đơn giản, mà là xương sống của hệ thống tồn kho. Nếu mô hình vị trí được thiết kế đúng, nhóm sẽ dễ kiểm soát lượng hàng, ngăn chọn sai vị trí, và tăng tính truy vết cho toàn bộ quy trình vận hành.
+Ngày 03 cho thấy cấu trúc kho không chỉ là một bảng dữ liệu đơn giản, mà là xương sống của hệ thống tồn kho. Nếu mô hình vị  trí được thiết kế đúng, nhóm sẽ dễ kiểm soát lượng hàng, ngăn chọn sai vị trí, và tăng tính truy vết cho toàn bộ quy trình vận hành.
 
 ## Kết luận
 
