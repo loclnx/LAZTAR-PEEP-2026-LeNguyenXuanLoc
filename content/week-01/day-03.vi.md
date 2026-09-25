@@ -56,3 +56,5 @@ Landing page hiện đã có nội dung đầy đủ, hỗ trợ EN/VI, responsi
 
 
 [gpt6astra-pi.vercel.app](https://gpt6astra-pi.vercel.app/)
+
+[Github repo](https://github.com/loclnx/LAZTAR-PEEP-2026-LeNguyenXuanLoc)

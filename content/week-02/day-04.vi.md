@@ -1,5 +1,5 @@
 +++
-title = "Ngày 04 - 24/09/2026 (Triển khai ERD cấu trúc kho)"
+title = "Ngày 04 - 24/09/2026 (REMOTE) (Triển khai ERD cấu trúc kho)"
 weight = 4
 +++
 
