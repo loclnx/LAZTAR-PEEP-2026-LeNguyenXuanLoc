@@ -56,3 +56,7 @@ The landing page is now complete with rich content, EN/VI support, responsive be
 
 
 [gpt6astra-pi.vercel.app](https://gpt6astra-pi.vercel.app/)
+
+
+([Github repo](https://github.com/loclnx/LAZTAR-PEEP-2026-LeNguyenXuanLoc))
+
