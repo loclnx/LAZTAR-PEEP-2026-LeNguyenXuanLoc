@@ -11,4 +11,4 @@ Ghi chú PEEP 2026 cho tuần thứ hai. Tuần này tập trung vào Git, quy t
 - [Ngày 01 - Thứ Hai - 21/09/2026 (ON-SITE) ](day-01/)
 - [Ngày 02 - Thứ Ba - 22/09/2026 (REMOTE) ](day-02/)
 - [Ngày 03 - Thứ Tư - 23/09/2026 (ON-SITE) ](day-03/)
-- [Ngày 04 - Thứ Năm - 24/09/2026 (Triển khai ERD) ](day-04/)
+- [Ngày 04 - Thứ Năm - 24/09/2026 (REMOTE) (Triển khai ERD) ](day-04/)
