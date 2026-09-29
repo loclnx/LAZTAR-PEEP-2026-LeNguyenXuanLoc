@@ -1,5 +1,5 @@
 +++
-title = "Ngày 02 - Thứ ba - 29/09/2026 (Thiết kế UI Dashboard WMS bằng Figma)"
+title = "Ngày 02 - Thứ ba 3 - 29/09/2026 (Thiết kế UI Dashboard WMS bằng Figma)"
 weight = 2
 +++
 
@@ -55,3 +55,9 @@ Phác thảo giao diện bằng Figma giúp nhóm trao đổi về bố cục v�
 ## Kết luận
 
 Ngày 02 đã hoàn thành bản thiết kế UI dashboard WMS responsive trên Figma. Công việc tập trung vào việc biến nhu cầu theo dõi vận hành kho thành một bố cục trực quan, có thứ bậc thông tin rõ ràng và phù hợp với nhiều kích thước màn hình. Bản thiết kế là cơ sở để nhóm trao đổi và tiếp tục triển khai giao diện trong các bước tiếp theo.
+
+## Kế hoạch ngày mai
+
+- Triển khai các tính năng backend đã được hoàn thành.
+- Tích hợp các tính năng vào ứng dụng và kiểm tra lại luồng nghiệp vụ liên quan từ đầu đến cuối.
+- Ghi nhận và xử lý các lỗi phát sinh trong quá trình kiểm thử.

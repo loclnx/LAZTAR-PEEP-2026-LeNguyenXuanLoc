@@ -55,3 +55,9 @@ Drafting the interface in Figma gives the team a way to discuss layout and user 
 ## Conclusion
 
 Day 2 produced a responsive WMS dashboard UI design in Figma. The work focused on turning warehouse monitoring needs into a clear interface with a readable information hierarchy that can adapt to different screen sizes. The design provides a basis for team review and future implementation in the application.
+
+## Plan for Tomorrow
+
+- Implement the backend features that have been completed.
+- Integrate the features into the application and retest the related business flow end to end.
+- Record and address any issues found during testing.
