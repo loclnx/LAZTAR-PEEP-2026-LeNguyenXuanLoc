@@ -1,5 +1,5 @@
 +++
-title = "Day 01 - Tuesday - 23/09/2026 (REMOTE) Sprint 0 Planning & Domain Alignment"
+title = "Day 01 - Monday - 28/09/2026 (REMOTE) Sprint 0 Planning & Domain Alignment"
 weight = 1
 +++
 
