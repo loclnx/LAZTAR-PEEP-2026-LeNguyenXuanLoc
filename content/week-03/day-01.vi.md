@@ -1,5 +1,5 @@
 +++
-title = "Ngày 01 - Thứ ba - 23/09/2026 (REMOTE) Lập kế hoạch Sprint 0 & Đồng bộ domain"
+title = "Ngày 01 - Thứ hai - 28/09/2026 (REMOTE) Lập kế hoạch Sprint 0 & Đồng bộ domain"
 weight = 1
 +++
 

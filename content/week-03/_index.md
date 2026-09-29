@@ -8,5 +8,5 @@ chapter = true
 
 Daily PEEP 2026 notes for the third week. This week I went to the office for 2 days.
 
-- [Day 01 - Tuesday - All day](day-01/)
-- [Day 02 - Friday - All day](day-02/)
+- [Day 01 - Monday - 28/09/2026 (REMOTE) ](day-01/)
+- [Day 02 - Tuesday - 29/09/2026 (ON-SITE) ](day-02/)
