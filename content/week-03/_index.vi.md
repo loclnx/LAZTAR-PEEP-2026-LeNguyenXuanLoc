@@ -9,5 +9,6 @@ chapter = true
 Ghi chú PEEP 2026 hằng ngày cho tuần thứ ba. Tuần này mình lên công ty 2 ngày.
 
 - [Ngày 01 - Thứ hai - 28/09/2026 (REMOTE) ](day-01/)
-- [Ngày 02 - Thứ ba -  29/06/2026 (ON-SITE) ](day-02/)
+- [Ngày 02 - Thứ ba - 29/09/2026 (ON-SITE) ](day-02/)
 - [Ngày 03 - Thứ tư - 30/09/2026 (REMOTE) ](day-03/)
+- [Ngày 04 - Thứ năm - 01/10/2026 (ON-SITE) ](day-04/)
