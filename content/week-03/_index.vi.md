@@ -12,3 +12,4 @@ Ghi chú PEEP 2026 hằng ngày cho tuần thứ ba. Tuần này mình lên côn
 - [Ngày 02 - Thứ ba - 29/09/2026 (ON-SITE) ](day-02/)
 - [Ngày 03 - Thứ tư - 30/09/2026 (REMOTE) ](day-03/)
 - [Ngày 04 - Thứ năm - 01/10/2026 (ON-SITE) ](day-04/)
+- [Ngày 05 - Thứ sáu - 02/10/2026 (REMOTE) ](day-05/)
