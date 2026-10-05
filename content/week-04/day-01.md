@@ -1,40 +1,25 @@
 +++
-title = "Day 01 - 08/07/2026"
+title = "Day 01 - Monday - 05/10/2026 (REMOTE)"
 weight = 1
 +++
 
-## Topics Learned
+## Work Completed
 
-Completed key feature flows for the mobile application, including Product Detail, Order Confirm checkout, and Favorite Products.
+- **Putaway UI - Putaway Order Management screen**:
+  - Designed the screen for managing putaway orders and tracking work to move goods into storage locations.
+  - Organized order information so users can identify and manage putaway tasks more easily.
+  - Focused on a clear layout and consistent warehouse workflows.
+- **Internal Transfer UI - Create Internal Warehouse Transfer screen**:
+  - Designed the screen for creating an internal warehouse transfer document.
+  - Organized the information needed for the transfer document and its goods to support creating a transfer request.
+  - Focused on a clear data-entry flow to help reduce mistakes when creating transfers.
 
-### 1. Product Detail Flow
+## Summary
 
-- **Implement Product Detail screen following Figma**:
-  - Product detail interface closely aligned with Figma design.
-  - Align mobile product detail and orders integration with backend APIs.
-- **What changed**:
-  - Add Product Detail route and navigation from product list.
-  - Use product image swatches with fallback handling.
-  - Integrate product detail API and upload image API.
-  - Refine auth-required flow: Allow the user to continue their intended action (e.g., checkout or add to cart) after successful login.
+This remote workday focused on two warehouse operations interfaces: managing putaway orders and creating internal warehouse transfer documents. Both screens need to present information clearly and make it straightforward for users to follow and complete warehouse workflows.
 
-### 2. Order Confirm Checkout Flow
+## Plan for Tomorrow
 
-- **Implement Order Confirm checkout flow**:
-  - Support COD and mock payment.
-- **API and business logic integration**:
-  - Add create order/payment mobile APIs aligned with backend contracts.
-- **UI and input validation**:
-  - Add validation to the checkout information form.
-  - Add order success state and Figma-aligned UI.
-
-### 3. Favorite Products & Heart Button
-
-- **Implement Favorite Products list screen**:
-  - Add infinite scroll for smooth product list loading.
-  - Optimize responsive layouts across various device screen sizes.
-- **Build interactive components**:
-  - Add `FavoriteHeartButton` component aligned with Figma specifications (click like component set) and layout tokens.
-- **API integration and Internationalization**:
-  - Add get favorite products mobile APIs.
-  - Add i18n translations for the feature UI.
+- Keep up with the backend team's progress and implementation plan to ensure the UI and APIs are integrated consistently.
+- Continue implementing the interfaces based on the business requirements.
+- Coordinate the integration and testing of the related APIs.
