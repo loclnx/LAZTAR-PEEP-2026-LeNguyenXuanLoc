@@ -1,16 +1,25 @@
 +++
-title = "Ngày 03 - 10/07/2026"
+title = "Ngày 03 - Thứ tư - 07/10/2026 (REMOTE)"
 weight = 3
 +++
 
 ## Công việc đã làm
 
-- **Tính năng Thông báo (Notifications)**:
-  - Triển khai màn hình Thông báo (Notifications screen) cho ứng dụng di động.
-  - Phân loại và hiển thị icon/màu sắc tương ứng cho từng loại thông báo (đơn hàng, giao hàng, khuyến mãi/ưu đãi).
-  - Hỗ trợ bộ lọc trạng thái: "Tất cả" (All), "Mới nhất" (Latest), và "Chưa đọc" (Unread).
-  - Thêm chức năng "Đánh dấu đã đọc tất cả" (Mark all read) và hiển thị thời gian tương đối (ví dụ: "5 phút trước", "Hôm qua").
-  - Xử lý giao diện khi không có thông báo (Empty State) và đồng bộ số lượng thông báo chưa đọc qua Firebase Cloud Messaging (FCM).
-- **Báo cáo Dự án**:
-  - Thực hiện làm slide Báo cáo dự án: [Link Canva](https://canva.link/alde122aw2fo63y)
-  - Báo cáo dự án
+- **Giao diện Xuất hàng - Màn hình Phân bổ tồn FEFO & Giữ hàng**:
+  - Thiết kế giao diện phân bổ tồn kho cho đơn xuất hàng theo nguyên tắc FEFO (hết hạn trước, xuất trước).
+  - Hiển thị thông tin phân bổ và số lượng giữ cho từng đơn hàng để dễ theo dõi.
+- **Giao diện Xuất hàng - Xử lý đơn thiếu hàng (Short ship / Đổi hàng)**:
+  - Thiết kế quy trình xử lý khi tồn kho không đủ để hoàn thành đơn hàng.
+  - Bổ sung các lựa chọn xuất thiếu hoặc đổi sản phẩm để xử lý tình trạng thiếu hàng.
+- **Giao diện Xuất hàng - Tiến độ Soạn hàng (Picking) & Đóng gói**:
+  - Thiết kế giao diện theo dõi tiến độ soạn hàng.
+  - Bổ sung quy trình đóng gói sau khi hoàn tất soạn hàng.
+
+## Tổng kết
+
+Ngày làm việc từ xa tập trung hoàn thiện giao diện quy trình xuất hàng: phân bổ và giữ hàng theo FEFO, xử lý đơn thiếu hàng bằng hình thức xuất thiếu hoặc đổi hàng, đồng thời theo dõi tiến độ soạn hàng và đóng gói.
+
+## Kế hoạch ngày mai
+
+- Kiểm thử tổng hợp các chức năng.
+- Sửa các lỗi phát hiện trong quá trình kiểm thử.
