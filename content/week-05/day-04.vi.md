@@ -1,3 +1,11 @@
+* **Chống tạo trùng lệnh cất hàng:** Ẩn nút tạo lệnh khi phiếu nhập đã có lệnh cất hàng; server cũng chặn tạo trùng.
+* **Sửa/xóa phiếu nhập:** Thêm API sửa và xóa, bổ sung nút sửa trên giao diện. Chỉ cho phép trước khi quản lý duyệt; server kiểm tra lại khi thao tác.
+* **Tạo phiếu ở bộ lọc “Tất cả kho”:** Bỏ disable nút tạo phiếu nhập, cho chọn kho nhận trong form.
+* **Bắt buộc hạn soạn hàng:** Không cho tiếp tục/lưu đơn xuất khi chưa nhập hạn hoàn tất soạn hàng.
+* **Chặn xác nhận nhập kho trước duyệt:** Phiếu phải được phân công và quản lý duyệt; chỉ nhân viên được giao mới được xác nhận.
+* **Bổ sung phiếu nhập vào “Đơn duyệt”:** Quản lý/admin nhìn thấy cả phiếu chưa phân công. Thêm trạng thái rõ ràng và nút  **Phân công & duyệt** .
+* **Xử lý thiếu toàn bộ hàng:** Thêm option  **Hủy toàn bộ đơn hàng** , đồng bộ trạng thái và giải phóng hàng giữ. Khóa phương án **Giao phần có sẵn** khi toàn đơn không có hàng để giao, đồng thời chặn ở server.
+
 +++
 title = "Ngày 04 - Thứ năm - 15/10/2026 (ON-SITE)"
 weight = 4

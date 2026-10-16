@@ -12,3 +12,4 @@ Daily PEEP 2026 notes for the fifth week.
 - [Day 02 - Tuesday - 13/10/2026 (REMOTE)](day-02/)
 - [Day 03 - Wednesday - 14/10/2026 (REMOTE)](day-03/)
 - [Day 04 - Thursday - 15/10/2026 (ON-SITE)](day-04/)
+- [Day 05 - Friday - 16/10/2026 (ON-SITE)](day-05/)
